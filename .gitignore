@@ -13,6 +13,7 @@ build
 dist
 notebooks
 venv
+.venv
 logs
 models/old
 evaluation/old

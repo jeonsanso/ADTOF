@@ -1,0 +1,40 @@
+[project]
+name = "adtof"
+version = "2.0.0"
+description = "Automatic Drum Transcription from crowdsourced data"
+readme = "README.md"
+requires-python = "==3.11.*"
+dependencies = [
+    "librosa>=0.8.0",
+    "Cython",
+    "madmom",
+    "tensorflow>=2.13.0",
+    "numpy>=1.23.5",
+    "matplotlib>=3.8.1",
+    "pandas>=1.2.4",
+    "mir_eval>=0.6",
+    "jellyfish",
+    "pyunpack>=0.2.2",
+    "ffmpeg-python",
+    "pretty_midi>=0.2.9",
+    "argparse",
+    "beautifulsoup4",
+    "scikit-learn>=1.3.2",
+    "tapcorrect",
+    "tf-keras",
+]
+
+[tool.uv.sources]
+tapcorrect = { git = "https://github.com/MZehren/tapcorrect", subdirectory = "python" }
+madmom = { git = "https://github.com/CPJKU/madmom" }
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["adtof*"]
+
+[tool.setuptools.package-data]
+adtof = ["models/*"]
